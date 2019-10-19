@@ -1,7 +1,8 @@
 {
-    "name": "xzt-weapp",
-    "version": "1.0.0",
+    "name": "xzt-weapp-test",
+    "version": "1.0.2",
     "description": "",
+    "miniprogram": "miniprogram_dist",
     "main": "dist/index.js",
     "scripts": {
         "dev": "gulp dev --develop",
@@ -16,7 +17,6 @@
         "lint": "eslint \"src/**/*.js\" --fix",
         "lint-tools": "eslint \"tools/**/*.js\" --rule \"import/no-extraneous-dependencies: false\" --fix"
     },
-    "miniprogram": "dist",
     "jest": {
         "testEnvironment": "jsdom",
         "testURL": "https://jest.test",
