@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "comp": "../../components/index",
+        "com-btn": "../../components/com-btn/com-btn"
+    }
+}
