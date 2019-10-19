@@ -1,2 +1,0 @@
-<view class="container" bind:tap="ontap">i am com-btn</view>
-
