@@ -22,16 +22,36 @@ const getEntry = () => {
     const files = glob.sync(globPath)
     const entries = []
     const reg = new RegExp('^' + pathDir)
-
-    console.log(files);
-
-
     for (let i = 0; i < files.length; i++) {
         // entries.push(files[i].replace(reg, '$`').replace('.json', ''))
         entries.push(files[i].replace(reg, 'components/').replace('.json', ''))
     }
     return entries
+
 }
+
+const getCopyEntry = () => {
+    const globPath = 'src/components/**/assets/*.*' // 匹配src目录下的所有文件夹中的html文件
+    const pathDir = 'src/components/' // 路径为src目录下的所有文件夹
+    const files = glob.sync(globPath)
+    const entries = []
+    const reg = new RegExp('^' + pathDir)
+    for (let i = 0; i < files.length; i++) {
+        entries.push(files[i].replace(reg, './components/'))
+    }
+
+    console.log(">>>>>>>>>>>>>>>>>>>>>>>");
+
+    console.log(files);
+    console.log(entries);
+    console.log(">>>>>>>>>>>>>>>>>>>>>>>");
+
+    return entries
+}
+
+
+getCopyEntry()
+
 
 
 module.exports = {
@@ -91,5 +111,5 @@ module.exports = {
         }
     },
 
-    copy: ['./assets', './utils.js'], // 将会复制到目标目录
+    copy: ['./utils', ...getCopyEntry()], // 将会复制到目标目录
 }

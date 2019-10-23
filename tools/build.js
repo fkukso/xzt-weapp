@@ -249,6 +249,12 @@ class BuildTask {
          */
         gulp.task(`${id}-copy`, gulp.parallel(done => {
             const copyList = this.copyList
+
+            console.log("........................");
+            console.log(copyList);
+            console.log("........................");
+
+
             const copyFileList = copyList.map(copyFilePath => {
                 try {
                     if (fs.statSync(path.join(srcPath, copyFilePath)).isDirectory()) {

@@ -1,3 +1,7 @@
-<comp/>
+<!-- logs.wxml -->
+<view class="container">
+	<xzt-a getPolicy="{{getPolicy}}" />
+</view>
 <b/>
+<view class="cimg" bind:tap="uploadImg" />
 

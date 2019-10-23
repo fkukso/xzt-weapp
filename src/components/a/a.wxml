@@ -1,5 +1,21 @@
-<view class="container">
-	i am a
-	<slot/>
+<view wx:for="{{list}}" wx:key="{{this}}">
+	<image
+	 wx:if="{{item.type === 'image'}}"
+	 class="image"
+	 mode="widthFix"
+	 src="{{item.url}}"
+	/>
+	<video
+	 wx:elif="{{item.type === 'video'}}"
+	 id="myVideo"
+	 src="{{item.url}}"
+	 enable-danmu
+	 danmu-btn
+	 controls
+	></video>
 </view>
+<view class="btn" bind:tap="uploadImg">选择图片上传</view>
+<view class="btn" bind:tap="uploadVideo">选择视频上传</view>
+<!-- 以下是对一个自定义组件的引用 -->
+<component-tag-name inner-text="Some text" />
 

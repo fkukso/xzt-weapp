@@ -1,0 +1,10 @@
+.image {
+    display: block;
+    width: 100%;
+}
+
+.btn {
+    height: 50px;
+    line-height: 50px;
+    margin: 10px 0;
+}
